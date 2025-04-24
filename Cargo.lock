@@ -380,6 +380,7 @@ dependencies = [
  "ark-bn254",
  "ark-ec",
  "ark-ff",
+ "ark-serialize",
  "ark-std",
  "hex",
  "rand",

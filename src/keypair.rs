@@ -6,8 +6,8 @@ use rand::thread_rng;
 
 #[derive(Debug)]
 pub struct Keypair<F: Field, G: CurveGroup> {
-    private_key: F,
-    public_key: G,
+    pub private_key: F,
+    pub public_key: G,
 }
 
 impl<F: Field, G: CurveGroup<ScalarField = F>> Keypair<F, G> {

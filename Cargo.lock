@@ -374,7 +374,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "schnorr-signature"
+name = "schnorr_spongefish"
 version = "0.1.0"
 dependencies = [
  "ark-bn254",

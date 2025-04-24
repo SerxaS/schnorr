@@ -11,14 +11,18 @@ pub struct Signature<F: Field, G: CurveGroup> {
     pub s: F,
 }
 impl<F: Field, G: CurveGroup<ScalarField = F>> Signature<F, G> {
-    pub fn sign(keypair: &Keypair<F, G>, transcript: &mut impl Transcript<F, G>, msg: F) -> Self {
+    pub fn sign(
+        keypair: &Keypair<F, G>,
+        transcript: &mut impl Transcript<F, G>,
+        message: F,
+    ) -> Self {
         let mut rng = thread_rng();
         let r = F::rand(&mut rng);
         let R = generator::<G>() * r;
 
         transcript.absorb_point(R);
         transcript.absorb_point(keypair.public_key);
-        transcript.absorb_scalar(msg);
+        transcript.absorb_scalar(message);
 
         let challenge = transcript.squeeze_challenge();
         let s = r + challenge * keypair.private_key;

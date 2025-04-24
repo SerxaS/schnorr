@@ -1,7 +1,6 @@
 use crate::curve::generator;
 use ark_ec::CurveGroup;
 use ark_ff::Field;
-use ark_std::UniformRand;
 use rand::thread_rng;
 
 #[derive(Debug)]

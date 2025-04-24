@@ -21,3 +21,20 @@ This crate is under active development. Stay tuned for:
 - 🔬 Expanded unit tests
 - ⛓️ Circuit-ready signature gadgets
 - 🧽 Seamless spongefish drop-in support
+
+---
+
+### 📚 Example
+
+You can run the following minimal usage example:
+
+```bash
+cargo run --example basic_sign
+```
+
+This will:
+- Generate a keypair
+- Sign a message
+- Verify the signature using a Poseidon-based transcript
+
+See [`examples/basic_sign.rs`](examples/basic_sign.rs) for the full code.

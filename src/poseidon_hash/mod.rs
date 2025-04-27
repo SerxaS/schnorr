@@ -5,7 +5,7 @@ use self::params::hasher::{RoundParams, Sbox, poseidon_bn254_5x5::Params};
 use ark_ff::Field;
 
 /// Constructs objects.
-#[derive(Clone)]
+#[derive(Debug, Clone)]
 pub struct Poseidon<F: Field> {
     /// Constructs an array for the inputs.
     inputs: [F; 5],

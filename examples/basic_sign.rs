@@ -2,11 +2,7 @@
 //! using Poseidon transcript over BN254
 
 use ark_bn254::{Fr, G1Projective};
-use schnorr_spongefish::{
-    keypair::Keypair,
-    signature::Signature,
-    transcript::{PoseidonTranscript, Transcript},
-};
+use schnorr_spongefish::{keypair::Keypair, signature::Signature, transcript::PoseidonTranscript};
 
 fn main() {
     // Generate a keypair

@@ -9,6 +9,7 @@ pub trait Transcript<F: Field, G: CurveGroup> {
     fn squeeze_challenge(&mut self) -> F;
 }
 
+#[derive(Debug, Clone)]
 pub struct PoseidonTranscript<F: Field> {
     sponge: PoseidonSponge<F>,
 }
@@ -25,8 +26,8 @@ impl<F: Field, G: CurveGroup> Transcript<F, G> for PoseidonTranscript<F> {
     fn absorb_point(&mut self, point: G) {
         let mut compressed_bytes = Vec::new();
         point.serialize_compressed(&mut compressed_bytes).unwrap();
-        let scalar = F::from_random_bytes(&compressed_bytes).unwrap();
-        self.sponge.update(&[scalar]);
+        let field_element = F::from_random_bytes(&compressed_bytes).unwrap();
+        self.sponge.update(&[field_element]);
     }
 
     fn absorb_scalar(&mut self, scalar: F) {

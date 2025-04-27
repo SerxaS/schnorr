@@ -33,6 +33,7 @@ cargo run --example basic_sign
 ```
 
 This will:
+
 - Generate a keypair
 - Sign a message
 - Verify the signature using a Poseidon-based transcript

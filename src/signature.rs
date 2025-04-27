@@ -4,8 +4,9 @@ use ark_ec::CurveGroup;
 use ark_ff::Field;
 use rand::thread_rng;
 
-use crate::{curve::generator, keypair::Keypair, transcript::Transcript};
+use crate::{keypair::Keypair, transcript::Transcript};
 
+#[derive(Debug, Clone)]
 pub struct Signature<F: Field, G: CurveGroup> {
     pub R: G,
     pub s: F,
@@ -18,7 +19,7 @@ impl<F: Field, G: CurveGroup<ScalarField = F>> Signature<F, G> {
     ) -> Self {
         let mut rng = thread_rng();
         let r = F::rand(&mut rng);
-        let R = generator::<G>() * r;
+        let R = G::generator() * r;
 
         transcript.absorb_point(R);
         transcript.absorb_point(keypair.public_key);
@@ -41,7 +42,7 @@ impl<F: Field, G: CurveGroup<ScalarField = F>> Signature<F, G> {
         transcript.absorb_scalar(message);
 
         let challenge = transcript.squeeze_challenge();
-        let lhs = generator::<G>() * self.s;
+        let lhs = G::generator() * self.s;
         let rhs = (public_key * challenge) + self.R;
 
         lhs == rhs

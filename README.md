@@ -4,7 +4,7 @@ This project provides a modular and zk-friendly implementation of Schnorr signat
 
 ---
 
-### 🔧 Features
+### Features
 
 - **Poseidon-based sponge hashing** (native implementation)
 - **Schnorr signatures** over any curve group (`G: CurveGroup`)

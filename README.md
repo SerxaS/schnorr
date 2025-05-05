@@ -1,4 +1,4 @@
-# 🔒 Schnorr Signatures and MuSig over Arkworks
+# Schnorr Signatures and MuSig over Arkworks
 
 This project provides a modular and zk-friendly implementation of Schnorr signatures and MuSig multi-signatures over elliptic curve groups, using the [arkworks](https://github.com/arkworks-rs) ecosystem.
 
@@ -6,25 +6,25 @@ This project provides a modular and zk-friendly implementation of Schnorr signat
 
 ### 🔧 Features
 
-- ✅ **Poseidon-based sponge hashing** (native implementation)
-- ✅ **Schnorr signatures** over any curve group (`G: CurveGroup`)
-- ✅ **MuSig multi-party signatures**: Aggregates signatures from multiple participants
-- ✅ **Transcript abstraction** for Fiat–Shamir transformation
-- 🚀 Designed for **ZK circuits**, **recursive proofs**, and **modular backend swaps**
+- **Poseidon-based sponge hashing** (native implementation)
+- **Schnorr signatures** over any curve group (`G: CurveGroup`)
+- **MuSig multi-party signatures**: Aggregates signatures from multiple participants
+- **Transcript abstraction** for Fiat–Shamir transformation
+- Designed for **ZK circuits**, **recursive proofs**, and **modular backend swaps**
 
 ---
 
-### 📚 Usage
+### Usage
 
 This crate is under active development. Stay tuned for:
 
-- 🔬 Expanded unit tests
-- ⛓️ Circuit-ready signature gadgets
-- 🧽 Seamless spongefish drop-in support
+- Expanded unit tests
+- Circuit-ready signature gadgets
+- Seamless spongefish drop-in support
 
 ---
 
-### ✊️ Basic Example: Single Signature
+### Basic Example: Single Signature
 
 To see **basic Schnorr signatures** and **MuSig multi-signatures** in action, you can run the following examples:
 
@@ -38,7 +38,7 @@ cargo run --example basic_sign
 
 This will:
 
-- Generate a keypair
+- Generate a key pair
 
 - Sign a message
 
@@ -48,7 +48,7 @@ See examples/basic_sign.rs for full code.
 
 ---
 
-### 🔗 MuSig Example: Multi-party Aggregated Signature
+### MuSig Example: Multi-party Aggregated Signature
 
 To see MuSig multi-signature aggregation across multiple participants, run the following:
 
